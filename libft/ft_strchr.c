@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 10:28:19 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/06 20:15:46 by coder            ###   ########.fr       */
+/*   Updated: 2021/12/08 18:18:01 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *str, int n)
 {
-	int cont;
+	int	cont;
 
 	cont = 0;
 	while (str[cont] != '\0')
@@ -29,4 +29,3 @@ char	*ft_strchr(const char *str, int n)
 		return ((char *)str + cont);
 	return (0);
 }
-

@@ -28,7 +28,8 @@ SRC_BONUS =		$(addprefix $(FOLDER_BONUS), \
 				exit.c \
 				so_long_utils.c \
 				free_solong.c \
-				error.c)
+				error.c \
+				load_hero.c)
 
 
 OBJS	= ${SRC:%.c=%.o}
@@ -44,31 +45,31 @@ LIBFT = ./libft/libft.a
 CFLAGS = -Wall -Werror -Wextra
 
 .c.o:
-	$(CC) $(CFLAGS) -lmlx -c $< -o $@
+	@$(CC) $(CFLAGS) -lmlx -c $< -o $@
 
 all:$(NAME)
 bonus: $(NAME_BONUS)
 
 
 $(NAME): $(OBJS)
-	make -C ./libft
-	rm -f $(NAME)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) $(LIBFT)
+	@make -C ./libft
+	@rm -f $(NAME)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) $(LIBFT)
 
 $(NAME_BONUS): $(OBJS_BONUS)
-	make -C ./libft
-	rm -f $(NAME_BONUS)
-	$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIB) $(LIBFT)
+	@make -C ./libft
+	@rm -f $(NAME_BONUS)
+	@$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIB) $(LIBFT)
 
 $(LIBFT):
-	make -C ./libft
+	@make -C ./libft
 
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS)
-	make clean -C ./libft
+	@rm -f $(OBJS) $(OBJS_BONUS)
+	@make clean -C ./libft
 
 fclean: clean
-	rm -f $(NAME) $(NAME_BONUS)
-	make fclean -C ./libft
+	@rm -f $(NAME) $(NAME_BONUS)
+	@make fclean -C ./libft
 
 re: fclean all

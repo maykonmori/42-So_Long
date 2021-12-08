@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:35:17 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:39:09 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:46:55 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,7 @@ int	start_game(t_game *game)
 	game->vars.mlx = mlx_init();
 	game->vars.win = mlx_new_window(game->vars.mlx, \
 	game->map.count_column * 30, game->map.count_line * 30, "So Long");
-	game->hero_right.img = mlx_xpm_file_to_image(game->vars.mlx, \
-	"./assets/sprites/knight_right.xpm", &game->hero_right.width, \
-	&game->hero_right.height);
-	game->hero_left.img = mlx_xpm_file_to_image(game->vars.mlx, \
-	"./assets/sprites/knight_left.xpm", &game->hero_left.width, \
-	&game->hero_left.height);
+	load_hero(game);
 	game->floor.img = mlx_xpm_file_to_image(game->vars.mlx, \
 	"./assets/sprites/floor.xpm", &game->floor.width, &game->floor.height);
 	game->wall.img = mlx_xpm_file_to_image(game->vars.mlx, \

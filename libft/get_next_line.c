@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 20:11:59 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/11/29 22:01:14 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/08 18:17:36 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*find_line(int fd, char **backup, char	*buffer)
 	while (ncheck == NULL)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read <= 0 )
+		if (bytes_read <= 0)
 		{
 			return (word_processing(backup, 0));
 		}

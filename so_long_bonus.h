@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:41:10 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:46:29 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:45:47 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ typedef struct s_game
 	t_vars	vars;
 	t_img	hero_right;
 	t_img	hero_left;
+	t_img	hero_up;
+	t_img	hero_down;
 	t_img	floor;
 	t_img	wall;
 	t_img	exit_close;
@@ -100,5 +102,6 @@ int		validate_ber(char *s, char *ext);
 void	verify_arg(int argc);
 void	init_vars(t_game *game);
 void	print_exit(t_game *game, int x, int y);
+void	load_hero(t_game *game);
 
 #endif

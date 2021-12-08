@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:26:37 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:26:46 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:41:13 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	free_images(t_game *game)
 	mlx_destroy_image(game->vars.mlx, game->coins.img);
 	mlx_destroy_image(game->vars.mlx, game->hero_right.img);
 	mlx_destroy_image(game->vars.mlx, game->hero_left.img);
+	mlx_destroy_image(game->vars.mlx, game->hero_up.img);
+	mlx_destroy_image(game->vars.mlx, game->hero_down.img);
 	mlx_destroy_image(game->vars.mlx, game->enemy.img);
 	mlx_destroy_window(game->vars.mlx, game->vars.win);
 	mlx_destroy_display(game->vars.mlx);

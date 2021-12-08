@@ -4,6 +4,8 @@ NAME_BONUS = so_long_bonus
 
 HEADER = so_long.h
 
+HEADER = so_long_bonus.h
+
 FOLDER = ./src/
 
 FOLDER_BONUS = ./src_bonus/

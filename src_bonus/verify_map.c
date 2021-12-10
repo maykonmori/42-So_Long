@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:39:15 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/08 00:32:02 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:30:31 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,8 @@ void	validate_map(t_game *game)
 		y++;
 	}
 	error_cep(game);
-	if (game->map.count_column == game->map.count_line)
-	{
-		free_vector(game);
-		error("square map", EXIT_FAILURE);
-	}
+	error_wall(game);
+	error_square(game);
 }
 
 void	count_column(t_game *game)

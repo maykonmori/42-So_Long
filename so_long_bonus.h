@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:41:10 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/08 19:45:47 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:30:14 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,7 @@ void	verify_arg(int argc);
 void	init_vars(t_game *game);
 void	print_exit(t_game *game, int x, int y);
 void	load_hero(t_game *game);
+void	error_wall(t_game *game);
+void	error_square(t_game *game);
 
 #endif

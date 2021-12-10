@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:26:58 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:31:11 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:46:46 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	check_move(int keycode, t_game *game, int line, int col)
 		return (1);
 	}
 	else
-		return (0);
+		return (-1);
 }
 
 void	move_hero(int keycode, t_game *game, int line, int col)
@@ -66,8 +66,8 @@ void	move_hero(int keycode, t_game *game, int line, int col)
 		game->map.map[y][x] = '0';
 		game->map.player.y = line;
 		game->map.player.x = col;
+		render_game(game);
 	}
-	render_game(game);
 }
 
 int	key_press(int keycode, t_game *game)

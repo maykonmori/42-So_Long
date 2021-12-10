@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:10:22 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:11:56 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:29:40 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,42 @@ void	verify_arg(int argc)
 		error("Too many arguments", EXIT_FAILURE);
 	if (argc < 2)
 		error("Have few arguments", EXIT_FAILURE);
+}
+
+void	error_wall(t_game *game)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (game->map.map[y])
+	{
+		x = 0;
+		while (game->map.map[y][x])
+		{
+			if (game->map.map[0][x] != '1' || \
+			game->map.map[game->map.count_line - 1][x] != '1')
+			{
+				free_vector(game);
+				error("Missing Wall", EXIT_FAILURE);
+			}
+			if (game->map.map[y][0] != '1' || \
+			game->map.map[y][game->map.count_column - 1] != '1')
+			{
+				free_vector(game);
+				error("Missing Wall", EXIT_FAILURE);
+			}
+			x++;
+		}
+		y++;
+	}
+}
+
+void	error_square(t_game *game)
+{
+	if (game->map.count_column == game->map.count_line)
+	{
+		free_vector(game);
+		error("square map", EXIT_FAILURE);
+	}
 }

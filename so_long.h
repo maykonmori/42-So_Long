@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:46:49 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:49:36 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:27:21 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ void	error_cep(t_game *game);
 int		validate_ber(char *s, char *ext);
 void	verify_arg(int argc);
 void	init_vars(t_game *game);
+void	error_wall(t_game *game);
+void	error_square(t_game *game);
 
 #endif

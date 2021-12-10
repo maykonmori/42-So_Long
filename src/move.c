@@ -6,7 +6,7 @@
 /*   By: mjose-ye <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 21:14:21 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/12/07 21:16:21 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:38:38 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ int	check_move(int keycode, t_game *game, int line, int col)
 		printf("moves: %d\n", game->count_move);
 		return (1);
 	}
+	if (keycode != KEY_W && keycode != KEY_S && keycode != KEY_A && \
+	keycode != KEY_D)
+		return (-1);
 	else
 		return (0);
 }

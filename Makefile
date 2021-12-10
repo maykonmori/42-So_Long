@@ -4,7 +4,7 @@ NAME_BONUS = so_long_bonus
 
 HEADER = so_long.h
 
-HEADER = so_long_bonus.h
+HEADER_BONUS = so_long_bonus.h
 
 FOLDER = ./src/
 
@@ -53,13 +53,11 @@ all:$(NAME)
 bonus: $(NAME_BONUS)
 
 
-$(NAME): $(OBJS)
-	@make -C ./libft
+$(NAME): $(LIBFT) $(OBJS)
 	@rm -f $(NAME)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB) $(LIBFT)
 
-$(NAME_BONUS): $(OBJS_BONUS)
-	@make -C ./libft
+$(NAME_BONUS): $(LIBFT) $(OBJS_BONUS)
 	@rm -f $(NAME_BONUS)
 	@$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIB) $(LIBFT)
 
@@ -73,5 +71,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME) $(NAME_BONUS)
 	@make fclean -C ./libft
+
+bonus_re : fclean bonus
 
 re: fclean all
